@@ -4,7 +4,7 @@ module.exports = {
     async create(request,response) {
         const { id } = request.body;
 
-        console.log(id);
+        //console.log(id);
 
 
         const ong = await connection('ongs')
@@ -12,7 +12,7 @@ module.exports = {
         .select('name')
         .first();
 
-        console.log(ong);
+        //console.log(ong);
 
         if(!ong) {
             return response.status(400).json({error: 'No ONG found with this ID'});
